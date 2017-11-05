@@ -1,7 +1,9 @@
 import scala.math.BigInt
+import scala.annotation.tailrec
 
 object Factorial extends App {
-  def factorial(i: BigInt): BigInt = if (i == 0) 1 else i * factorial(i - 1)
+  @tailrec
+  def factorial(i: BigInt, total: BigInt = 1): BigInt = if (i == 0) total else factorial(i - 1, i * total)
 
   println(factorial(10000))
 }
