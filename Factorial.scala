@@ -1,7 +1,7 @@
 import scala.math.BigInt
 
 object Factorial extends App {
-  def factorial(i: BigInt): BigInt = if (i == 0) 1 else i * factorial(i - 1)
+  def factorial(n: Int, i: BigInt): BigInt = n match { case 0 => i case _ => factorial(n - 1, n * i) }
 
-  println(factorial(10000))
+  println(factorial(10000, 1))
 }
