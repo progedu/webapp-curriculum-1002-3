@@ -1,7 +1,8 @@
 import scala.math.BigInt
 
-object Factorial extends App {
-  def factorial(i: BigInt): BigInt = if (i == 0) 1 else i * factorial(i - 1)
+object factorialTailCall extends App{
+    def factorialTailCall(i:BigInt,j:BigInt):BigInt = if(i==0)return j else factorialTailCall(i-1,i*j)
 
-  println(factorial(10000))
+    println(factorialTailCall(10000,1))
+
 }
